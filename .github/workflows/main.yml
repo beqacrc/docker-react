@@ -15,4 +15,4 @@ jobs:
         run: docker build -f Dockerfile.dev . -t react-app/unit-test
 
       - name: Run unit tests
-        run: docker run react-app/unit-test npm run test
+        run: docker run react-app/unit-test npm run test -- --run
