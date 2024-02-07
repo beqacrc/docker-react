@@ -21,3 +21,4 @@ jobs:
 
       - name: Run tests in Docker container
         run: docker run -e CI=true docker-react npm run test
+  
