@@ -1,16 +1,11 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    services:
-      - docker
+    name: gela
 
     steps:
       - name: Checkout repository
