@@ -1,0 +1,1 @@
+export const getPi = () => 3.14

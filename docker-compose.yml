@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  react-app:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:5173"
+    volumes:
+      - /react-app/node_modules
+      - ./frontend:/react-app
+
+  react-app-tests:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /react-app/node_modules
+      - ./frontend:/react-app
+    command: ["npm", "run", "test"]
