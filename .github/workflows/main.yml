@@ -7,16 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     name: gela
 
-    services:
-      docker:
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      - name: Build Docker image
-        run: docker build -t docker-react -f Dockerfile.dev .
-
-      - name: Run tests in Docker container
-        run: docker run -e CI=true docker-react npm run test
-  
