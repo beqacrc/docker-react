@@ -13,7 +13,9 @@ jobs:
 
       - name: Build Docker image
         uses: docker/build-push-action@v5
+        with:
+          context: .
+          dockerfile: Dockerfile.prod
+          push: false  # Set to true if you want to push the image
 
-      # - name: Run tests in Docker container
-      #   run: docker run -e CI=true docker-react npm run test
-  
+      # You can add additional steps here, e.g., running tests in the Docker container.
