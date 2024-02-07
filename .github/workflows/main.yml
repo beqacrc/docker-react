@@ -15,7 +15,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          dockerfile: Dockerfile.dev
+          dockerfile: Dockerfile.prod
           push: false  # Set to true if you want to push the image
 
       # You can add additional steps here, e.g., running tests in the Docker container.
