@@ -12,10 +12,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          dockerfile: Dockerfile.prod
-          push: false  # Set to true if you want to push the image
-
-      # You can add additional steps here, e.g., running tests in the Docker container.
+        run: docker build -f Dockerfile.dev .
