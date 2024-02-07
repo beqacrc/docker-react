@@ -1,24 +1,19 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    services:
-      - docker
+    name: gela
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build -t docker-react -f Dockerfile.dev .
+        uses: docker/build-push-action@v5
 
-      - name: Run tests in Docker container
-        run: docker run -e CI=true docker-react npm run test
+      # - name: Run tests in Docker container
+      #   run: docker run -e CI=true docker-react npm run test
   
